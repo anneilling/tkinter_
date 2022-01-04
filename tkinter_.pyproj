@@ -27,6 +27,7 @@
     <Content Include="kot.gif" />
     <Content Include="kot2.gif" />
     <Content Include="kot3.gif" />
+    <Content Include="kot4.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
