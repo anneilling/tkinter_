@@ -5,12 +5,14 @@ def clicker(event):
     global click
     click+=1
     lbl.configure(text=click)
+    aken.geometry(str(aken.winfo_width()+10)+"x"+str(aken.winfo_height()+10))
     if click==100:
        click=0
 def clicker_minus(event):
     global click
     click-=1
     lbl.configure(text=click)
+    aken.geometry(str(aken.winfo_width()-10)+"x"+str(aken.winfo_height()-10))
     if click==-100:
        click=0
 def txt_to_lbl(event):
@@ -21,11 +23,15 @@ def valik():
     valik_=var.get()
     lbl.configure(text=valik_)
     txt.insert(0,valik_)        
+def out(event):
+    aken.destroy() #delete ljuboj widget
 
 aken=Tk()
 aken.title("Akna nimetus")
-aken.geometry("1920x1080")
+aken.geometry("400x600")
+nupp1=Button(aken,text="Sign out",font="Arial 16",fg="white",bg="black",height=5,width=15,relief=RAISED)
 nupp=Button(aken,text="Vajuta\nNuppu",font="Arial 20",fg="black",bg="white",height=4,width=20,relief=RAISED)#GROOVE, #SUNKEN
+nupp1.bind("<Button-1>",out)
 nupp.bind("<Button-1>",clicker)#LKM
 nupp.bind("<Button-3>",clicker_minus)#PKM
 lbl=Label(aken,text="...",height=4,width=20,font="Arial 20",fg="white",bg="black")
@@ -46,6 +52,7 @@ r4=Radiobutton(aken,image=i4,variable=var,value="Meow",command=valik)
 
 lbl.pack()
 nupp.pack(side=TOP)#side=LEFT,TOP,RIGHT
+nupp1.pack(side=LEFT)
 txt.pack()
 r1.pack(side=LEFT)
 r2.pack(side=LEFT)
